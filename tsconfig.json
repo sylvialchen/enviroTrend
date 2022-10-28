@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "ES2017",
+        "outDir": "./dist",
+        "baseUrl": "./src",
+        "esModuleInterop": true,
+        "moduleResolution": "Node",
+        // "paths": {
+        //     "*": [
+        //         "*",
+        //         "./dist/*"
+        //     ]
+        // }
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/index.js"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

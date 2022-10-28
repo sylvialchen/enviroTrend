@@ -18,7 +18,8 @@ class UsersController implements Controller {
     }
 
     private initializeRoutes() {
-        this.router.get(this.path, this.getNewRegistration)
+        this.router.get(this.path, this.getNewRegistration);
+        this.router.post(this.path, this.createNewUser)
     }
 
 
@@ -28,8 +29,8 @@ class UsersController implements Controller {
     //         currentUser: req.session.currentUser
     //     });
     // });
-    private getNewRegistration(request: express.Request, response: express.Response) {
-        response.send("Hello Typescript")
+    private getNewRegistration(req: express.Request, res: express.Response) {
+        res.send("Hello Typescript")
     };
 
     // Create (registration route)
@@ -40,6 +41,15 @@ class UsersController implements Controller {
     //         res.redirect('/');
     //     });
     // })   
+    private createNewUser(req: express.Request, res: express.Response) {
+        req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+        const userData: User = req.body;
+        const createdUser = new userModel(userData);
+        createdUser.save()
+            .then(savedUser => {
+                res.send(savedUser);
+            })
+    }
 
 }
 

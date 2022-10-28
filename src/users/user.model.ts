@@ -1,7 +1,6 @@
-// Dependencies 
+// Dependencies
 // const mongoose = require('mongoose');
-import * as mongoose from 'mongoose';
-import { Schema, InferSchemaType } from 'mongoose';
+import mongoose, { Schema, InferSchemaType } from 'mongoose';
 
 // Document Interface
 type User = InferSchemaType<typeof userSchema>;
@@ -13,11 +12,12 @@ type User = InferSchemaType<typeof userSchema>;
 // Schema
 const userSchema = new Schema({
   email: { type: String, unique: true, required: true },
-  password: { type: String, }
+  password: { type: String, },
+  savedBadDays: { type: Object }
 });
 
 // User Model
 const User = mongoose.model<User & mongoose.Document>('User', userSchema);
 
 // Export User Model
-// module.exports = User;
+export default User;

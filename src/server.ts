@@ -1,30 +1,29 @@
 import App from './app';
 import 'dotenv/config';
-import * as mongoose from 'mongoose';
+import mongoose from 'mongoose';
 const PORT = process.env.PORT;
-import UserController from './users/users.controller';
+import UsersController from './users/users.controller';
 
 
+// Database Configuration
+mongoose.connect(process.env.DATABASE_URL
+	// 	, {
+	// 	useNewUrlParser: true,
+	// 	useUnifiedTopology: true
+	// }
+);
 
-// // Database Configuration
-// mongoose.connect(process.env.DATABASE_URL
-// 	// 	, {
-// 	// 	useNewUrlParser: true,
-// 	// 	useUnifiedTopology: true
-// 	// }
-// );
-
-// // Database Connection Error / Success
-// const db = mongoose.connection;
-// db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
-// db.on('connected', () => console.log('mongo connected'));
-// db.on('disconnected', () => console.log('mongo disconnected'));
+// Database Connection Error / Success
+const db = mongoose.connection;
+db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
+db.on('connected', () => console.log('mongo connected'));
+db.on('disconnected', () => console.log('mongo disconnected'));
 
 const app = new App(
 	[
-		new UserController(),
+		new UsersController(),
 	],
-	5000
+	5050
 );
 
 app.listen()

@@ -8,6 +8,8 @@ function loggerMiddleware(request: express.Request, response: express.Response, 
     next();
 }
 
+
+
 class App {
     public app: Application;
     public port: number;
@@ -19,13 +21,15 @@ class App {
         this.initializeControllers(controllers);
     }
     private initializeMiddlewares() {
-        this.app.use(bodyParser.json());
-        // this.app.use(
-        //     session({
-        //         secret: process.env.SECRET,
-        //         resave: false,
-        //         saveUninitialized: false
-        //     }));
+        this.app.use(bodyParser.urlencoded(
+            { extended: true }
+        ));
+        this.app.use(
+            session({
+                secret: process.env.SECRET,
+                resave: false,
+                saveUninitialized: false
+            }));
         // this.app.use(methodOverride('_method'));
         this.app.use(loggerMiddleware);
     }

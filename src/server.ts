@@ -1,8 +1,9 @@
 import App from './app';
 import 'dotenv/config';
 import mongoose from 'mongoose';
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 import UsersController from './users/users.controller';
+import SessionsController from './sessions/sessions.controller';
 
 
 // Database Configuration
@@ -22,6 +23,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 const app = new App(
 	[
 		new UsersController(),
+		new SessionsController(),
 	],
 	5050
 );

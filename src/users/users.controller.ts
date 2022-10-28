@@ -1,12 +1,21 @@
-// const express = require('express');
 import express from 'express';
-// const bcrypt = require('bcrypt');
 import Controller from '../interfaces/controller.interface';
 import bcrypt from 'bcrypt';
-// const userRouter = express.Router();
-// const User = require('../users/user.model.ts');
 import User from './users.interface';
 import userModel from './user.model';
+// import session from 'express-session';
+
+
+export interface MyContext {
+    req: Request & { session: Express.Session };
+    res: Response;
+}
+
+// declare module session {
+//     interface SessionData {
+//         user: User;
+//     }
+// }
 
 class UsersController implements Controller {
     public path = '/users';
@@ -30,7 +39,9 @@ class UsersController implements Controller {
     //     });
     // });
     private getNewRegistration(req: express.Request, res: express.Response) {
-        res.send("Hello Typescript")
+        res.render('../views/users/new.ejs', {
+            currentUser: req.session.currentUser
+        })
     };
 
     // Create (registration route)

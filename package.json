@@ -28,5 +28,8 @@
     "url": "https://github.com/sylvialchen/meen-auth-starter/issues"
   },
   "homepage": "https://github.com/sylvialchen/meen-auth-starter#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/express-session": "^1.17.0"
+  }
 }

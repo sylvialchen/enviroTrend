@@ -10,7 +10,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.5.5",
     "node-fetch": "^2.6.1",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.1"
   },
   "scripts": {
     "start": "node build/index.js",

@@ -10,11 +10,12 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.5.5",
     "node-fetch": "^2.6.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4"
   },
   "scripts": {
     "dev": "ts-node ./src/server.ts",
-    "build": "./node_modules/typescript/bin/tsc",
+    "build": "tsc",
     "start": "node dist/index.js"
   },
   "name": "meen-auth-starter",

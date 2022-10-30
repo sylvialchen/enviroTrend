@@ -25,7 +25,7 @@ const app = new App(
 		new UsersController(),
 		new SessionsController(),
 	],
-	5050
+	process.env.PORT || 5050
 );
 
 app.listen()

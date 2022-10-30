@@ -6,6 +6,7 @@
         "baseUrl": "./src",
         "esModuleInterop": true,
         "moduleResolution": "Node",
+        "module": "CommonJS"
     },
     "include": [
         "src/**/*.ts",

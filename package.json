@@ -14,7 +14,8 @@
   },
   "scripts": {
     "dev": "ts-node ./src/server.ts",
-    "build": "tsc",
+    "tsc": "tsc",
+    "build": "npm run tsc",
     "start": "ts-node ./src/server.ts"
   },
   "name": "meen-auth-starter",

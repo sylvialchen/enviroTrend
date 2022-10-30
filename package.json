@@ -15,7 +15,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "ts-node ./src/server.ts",
-    "postinstall": "ts-node ./src/server.ts"
+    "heroku-postbuild": "ng build --prod"
   },
   "name": "meen-auth-starter",
   "version": "1.0.0",

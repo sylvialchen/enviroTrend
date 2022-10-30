@@ -3,19 +3,12 @@ import Controller from '../interfaces/controller.interface';
 import bcrypt from 'bcrypt';
 import User from './users.interface';
 import userModel from './user.model';
-// import session from 'express-session';
 
 
 export interface MyContext {
     req: Request & { session: Express.Session };
     res: Response;
 }
-
-// declare module session {
-//     interface SessionData {
-//         user: User;
-//     }
-// }
 
 class UsersController implements Controller {
     public path = '/users';

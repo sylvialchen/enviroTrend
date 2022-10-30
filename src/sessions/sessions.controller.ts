@@ -2,21 +2,19 @@
 import express from 'express';
 import Controller from '../interfaces/controller.interface';
 import bcrypt from 'bcrypt';
-// import User from '../users/users.interface';
 import userModel from '../users/user.model';
 import fetch from 'node-fetch';
 
 
-export interface MyContext {
-    req: Request & { session: Express.Session };
-    res: Response;
-}
+// export interface MyContext {
+//     req: Request & { session: Express.Session };
+//     res: Response;
+// }
 
 
 class SessionsController implements Controller {
     public path = '/sessions';
     public router = express.Router();
-    // private user = userModel
     private weatherAPI1 = `https://api.openweathermap.org/data/2.5/weather?q=`
     private weatherAPI2 = `&appid=fcb18c82fe8c42a3603ffbe6309ec28f`
 
@@ -26,6 +24,7 @@ class SessionsController implements Controller {
 
     private initializeRoutes() {
         this.router.get(this.path, this.newLoginPage);
+        this.router.get(`${this.path}/savedWeather`, this.userSavedWeather);
         this.router.delete(this.path, this.logoutRoute);
         this.router.post(this.path, this.newLoginRoute);
         this.router.post(`${this.path}/addBadDay`, this.addBadDay);
@@ -36,6 +35,13 @@ class SessionsController implements Controller {
             currentUser: req.session.currentUser
         })
     };
+
+    private userSavedWeather(req: express.Request, res: express.Response) {
+        console.log(req.session.currentUser)
+        res.render('../views/sessions/savedWeather.ejs', {
+            currentUser: req.session.currentUser
+        })
+    }
 
     private logoutRoute(req: express.Request, res: express.Response) {
         req.session.destroy((error) => {

@@ -32,6 +32,7 @@ class App {
             }));
         this.app.use(methodOverride('_method'));
         this.app.use(loggerMiddleware);
+        this.app.use('/', express.static('Public'))
     }
 
     private initializeRoutes() {

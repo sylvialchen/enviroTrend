@@ -1,13 +1,8 @@
 // Dependencies
-// const mongoose = require('mongoose');
 import mongoose, { Schema, InferSchemaType } from 'mongoose';
 
 // Document Interface
 type User = InferSchemaType<typeof userSchema>;
-// interface User {
-//   email: string;
-//   password?: string;
-// }
 
 // Schema
 const userSchema = new Schema({

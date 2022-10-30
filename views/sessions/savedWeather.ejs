@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<nav>
+  <%- include('../partials/nav.ejs') %>
+</nav>
+
+<body class="container">
+  <h1>Saved Weather for 😭</h1>
+  <table id="dataTable">
+    <th>Humidity</th>
+    <th>Temperature</th>
+    <% for (i = 0; i < currentUser.savedBadDays.length; i++) {%>
+    <tr>
+      <td id="humidity<%=i%>"><%= currentUser.savedBadDays[i].main.humidity %></td>
+      <td id="temperature<%=i%>"><%= (1.8 * (currentUser.savedBadDays[i].main.temp - 273) + 32 ).toFixed(1) %></td>
+    </tr>
+    <% } %>
+  </table>
+  <div id="graph" style="width:600px;height:450px;"></div>
+
+</body>
+
+</html>
+
+<script>
+  let rows = document.getElementById("dataTable").rows.length - 1
+  plotlyXAxis = []
+  plotlyYAxis = []
+  for (i = 0; i < rows; i++) {
+    plotlyXAxis.push(parseInt(document.getElementById(`humidity${i}`).innerText))
+    plotlyYAxis.push(parseInt(document.getElementById(`temperature${i}`).innerText))
+  }
+
+  console.log(plotlyXAxis)
+  console.log(plotlyYAxis)
+
+
+  GRAPH = document.getElementById('graph');
+  var trace1 = {
+    x: plotlyXAxis,
+    y: plotlyYAxis,
+    mode: 'markers',
+    marker: {
+      size: 15,
+    }
+  };
+
+  var data = [trace1];
+
+  var layout = {
+    showlegend: false,
+    xaxis: {
+      title: {
+        text: 'Humidity (%)',
+      },
+    },
+    yaxis: {
+      title: {
+        text: 'Temperature (°F)',
+      }
+    }
+  };
+
+  Plotly.newPlot(GRAPH, data, layout, {
+    scrollZoom: true
+  });
+</script>

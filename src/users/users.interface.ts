@@ -1,7 +1,7 @@
 interface User {
     email: string;
     password: string;
-    savedBadDays?: object[]
+    savedBadDays?: Array<object>;
 }
 
 export default User;

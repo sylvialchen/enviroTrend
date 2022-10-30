@@ -22,7 +22,7 @@
   "version": "1.0.0",
   "main": "server.ts",
   "repository": {
-    "type": "git"
+    "type": "module"
   },
   "author": "",
   "license": "ISC",

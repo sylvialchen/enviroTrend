@@ -15,8 +15,7 @@
   "scripts": {
     "dev": "ts-node ./src/server.ts",
     "build": "tsc",
-    "start": "ts-node ./src/server.ts",
-    "postinstall": "tsc"
+    "start": "ts-node ./src/server.ts"
   },
   "name": "meen-auth-starter",
   "version": "1.0.0",

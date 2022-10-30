@@ -13,7 +13,7 @@ type User = InferSchemaType<typeof userSchema>;
 const userSchema = new Schema({
   email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
-  savedBadDays: { type: Object }
+  savedBadDays: { type: Array }
 });
 
 // User Model

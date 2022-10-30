@@ -39,20 +39,6 @@ app.listen()
 
 
 
-// // Routes / Controllers
-// const userController = require('./controllers/users');
-// app.use('/users', userController);
-// const sessionsController = require('./controllers/sessions');
-// app.use('/sessions', sessionsController);
-// app.get('/', (req, res) => {
-// 	if (req.session.currentUser) {
-// 		res.render('dashboard.ejs', {
-// 			currentUser: req.session.currentUser
-// 		});
-// 	} else {
-// 		res.render('index.ejs', {
-// 			currentUser: req.session.currentUser
-// 		});
-// 	}
-// });
+
+
 

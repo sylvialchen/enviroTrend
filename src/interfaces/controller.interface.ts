@@ -6,4 +6,5 @@ interface Controller {
     router: Router;
 }
 
+
 export default Controller;

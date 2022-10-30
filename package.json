@@ -9,6 +9,7 @@
     "express-session": "^1.17.3",
     "method-override": "^3.0.0",
     "mongoose": "^6.5.5",
+    "node-fetch": "^2.6.1",
     "ts-node": "^10.9.1"
   },
   "scripts": {
@@ -30,6 +31,7 @@
   "homepage": "https://github.com/sylvialchen/meen-auth-starter#readme",
   "description": "",
   "devDependencies": {
-    "@types/express-session": "^1.17.0"
+    "@types/express-session": "^1.17.0",
+    "@types/node-fetch": "^2.6.2"
   }
 }

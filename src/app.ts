@@ -8,16 +8,16 @@ function loggerMiddleware(request: express.Request, response: express.Response, 
     next();
 }
 
-
-
 class App {
     public app: Application;
     public port: number;
+    public path = '';
 
     constructor(controllers, port) {
         this.app = express();
         this.port = port;
         this.initializeMiddlewares();
+        this.initializeRoutes();
         this.initializeControllers(controllers);
     }
     private initializeMiddlewares() {
@@ -30,8 +30,13 @@ class App {
                 resave: false,
                 saveUninitialized: false
             }));
-        // this.app.use(methodOverride('_method'));
+        this.app.use(methodOverride('_method'));
         this.app.use(loggerMiddleware);
+    }
+
+    private initializeRoutes() {
+        this.app.get(this.path, this.homepage);
+
     }
 
     private initializeControllers(controllers) {
@@ -39,6 +44,21 @@ class App {
             this.app.use('/', controller.router);
         })
     }
+
+
+    private homepage(req: express.Request, res: express.Response) {
+        console.log("here")
+        if (req.session.currentUser) {
+            res.render('dashboard.ejs', {
+                currentUser: req.session.currentUser
+            });
+        } else {
+            res.render('index.ejs', {
+                currentUser: req.session.currentUser
+            });
+        }
+    };
+
 
     public listen() {
         this.app.listen(this.port, () => {

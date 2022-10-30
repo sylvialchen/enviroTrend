@@ -15,7 +15,7 @@
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc",
-    "postinstall": "npm run dev"
+    "postinstall": "node server.js"
   },
   "name": "meen-auth-starter",
   "version": "1.0.0",

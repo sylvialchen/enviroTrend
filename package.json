@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "ts-node ./src/server.ts",
     "tsc": "./node_modules/typescript/bin/tsc",
-    "start": "node build/index.js"
+    "start": "npm run dev"
   },
   "name": "meen-auth-starter",
   "version": "1.0.0",

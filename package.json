@@ -10,8 +10,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.5.5",
     "node-fetch": "^2.6.1",
-    "ts-node": "^10.9.1",
-    "tsc": "^2.0.4"
+    "ts-node": "^10.9.1"
   },
   "scripts": {
     "dev": "ts-node ./src/server.ts",

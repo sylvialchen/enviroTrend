@@ -13,7 +13,7 @@ Saves OpenWeatherAPI data to aggregate environmental variables affecting you or 
 
 
 ## Getting Started
-* [Hosted on GitHub Pages](https://sylvialchen.github.io/bo-bo-card-game/)
+* [Hosted on Heroku](https://itchy-babies.herokuapp.com)
 
 
 

@@ -1,5 +1,5 @@
-#### Itchy Babies
-Saves OpenWeatherAPI data to aggregate environmental variables affecting you or your child's skin.
+#### EnviroTrend
+Saves OpenWeatherAPI data to aggregate environmental variables for future analysis.
 
 ### Technologies Used
 * Typescript
@@ -12,13 +12,7 @@ Saves OpenWeatherAPI data to aggregate environmental variables affecting you or 
 <img width="650" alt="image" src="https://user-images.githubusercontent.com/101881486/198895170-6f78dc75-0578-4751-bc04-d4dabe8d9db7.png">
 
 
-## Getting Started
-* [Hosted on Heroku](https://itchy-babies.herokuapp.com)
-
-
-
-
 ## Future Enhancements
 * Expand Good Days, Healing Days
-* Expand API call to include Air Pollution based on lon & lat data already saved
+* Enhance the API request by incorporating longitude and latitude data that has already been stored
 * Restructure data to organize on backend

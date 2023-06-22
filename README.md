@@ -1,4 +1,4 @@
-#### EnviroTrend (renamed from Itchy Babies)
+#### EnviroTrend (previously named Itchy Babies)
 Saves OpenWeatherAPI data to aggregate environmental variables for future analysis.
 
 ### Technologies Used
